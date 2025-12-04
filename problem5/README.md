@@ -73,13 +73,13 @@
 
 ## Technology Stacks
 
-**Runtime**: Node.js with TypeScript
-**Framework**: Express.js
-**Database**: PostgreSQL
-**WebSocket**: Socket.io
-**ORM**: TypeORM
-**Authentication**: Jsonwebtoken
-**Validation**: Class-validator
+**Runtime**: Node.js with TypeScript </br>
+**Framework**: Express.js</br>
+**Database**: PostgreSQL</br>
+**WebSocket**: Socket.io</br>
+**ORM**: TypeORM</br>
+**Authentication**: Jsonwebtoken</br>
+**Validation**: Class-validator</br>
 **Ratelimit**: Helmet
 
 ## Data Models
@@ -127,9 +127,9 @@ interface ScoreUpdateEvent {
 
 ## API Endpoints
 
-### 1. POST `/api/login`
+### 1. POST `/api/auth/login`
 
-user login into the game get their jwt.
+user login into the game get their's jwt.
 
 **Request Body**:
 
@@ -262,7 +262,7 @@ Authorization: Bearer <JWT_TOKEN>
 
 **Server → Client: Scoreboard Update**
 
-- When a score update affects the top 10, the server broadcasts the new list to all connected clients.
+- When a score update affects the top 10, Server broadcasts the new top 10 list to all connected clients.
 
 ```json
 {
