@@ -56,6 +56,8 @@ export const initTokenDropdowns = () => {
         const receiveInput = document.querySelector("#output-amount");
         sendInput.value = "";
         receiveInput.value = "";
+        const submitButton = document.querySelector(".submit-button");
+        submitButton.disabled = true;
       }
     } else {
       //close dropdowns when clicking outside
