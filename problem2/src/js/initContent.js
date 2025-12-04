@@ -1,4 +1,4 @@
-import { MainContent } from "../components/Swap.js";
+import { MainContent } from "../components/MainContent.js";
 import { initTokenDropdowns } from "./tokenDropdown.js";
 import { handleSubmit } from "./handleSubmit.js";
 import { handleInput } from "./handleInput.js";
