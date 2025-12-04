@@ -22,7 +22,7 @@
        |
        │    HTTP Request (Init a game action)
        │ ┌──────────────────────────────┐
-       └─┤ POST /api/actions/initiate   |
+       └─┤ POST /api/actions   |
          │ Headers: Authorization Token │
          └──────────┬───────────────────┘
                     |
@@ -51,18 +51,18 @@
          │  - Call Service Layer   │
          └──────────┬──────────────┘
                     │
-         ┌─────────────────────────┐
-         │  Score Service          │
-         │  - Business Logic       │
-         │  - Validation           │
-         │  - Score Calculation    │
-         └──────────┬──────────────┘
+         ┌────────────────────────────┐
+         │  Score Service             │
+         │  - Business Logic          │
+         │  - Validation(action token)│
+         │  - Score Calculation       │
+         └──────────┬─────────────────┘
                     │
-         ┌─────────────────────────┐
-         │  Database Layer         │
-         │  - Update Score         │
-         │  - Query Top 10         │
-         └──────────┬──────────────┘
+         ┌──────────────────────────┐
+         │  Database Layer          │
+         │  - Update Score          │
+         │  - Query Top 10          │
+         └──────────┬───────────────┘
                     │
                     │
          ┌─────────────────────────┐
@@ -219,7 +219,7 @@ Retrieve top 10 users and their scores.
 }
 ```
 
-### 4. POST `/api/actions/initiate`
+### 4. POST `/api/actions`
 
 Generate a one-time action token when user initiates an action.
 
@@ -294,5 +294,5 @@ Authorization: Bearer <JWT_TOKEN>
 
 1.  **Server-Side Action Validation:** we should check if the action complete or not then add score for user directly. user should not send the request increase score by them self.
 2.  **Cache:** Using Redis for cache rank updates and retrieval.
-3.  **Broadcasting Strategy:** use throttle strategy so we just need to broadcast every 1s
+3.  **Broadcasting Strategy:** use throttle strategy so we just need to broadcast scoreboard update every 1s
 4.  **Add unit test and e2e test**
