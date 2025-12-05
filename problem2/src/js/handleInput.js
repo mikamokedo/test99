@@ -26,7 +26,10 @@ export const handleInput = () => {
 
         const currentTokenPrice = PRICE_DATA.find((p) => p.currency === currentTokenSymbol)?.price;
         const otherTokenPrice = PRICE_DATA.find((p) => p.currency === otherTokenSymbol)?.price;
+        if(!currentTokenPrice && !isNaN(currentTokenPrice)){
         otherAmount.value = ((currentTokenPrice * parseFloat(currentAmount)) / otherTokenPrice).toFixed(6);
+
+        }
       }
     });
   });

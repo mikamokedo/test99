@@ -85,6 +85,10 @@ form {
   align-items: flex-start;
 }
 
+.item-swap-amount label{
+  font-weight: 600;
+}
+
 .item-swap-amount input {
   background: none;
   border: none;
