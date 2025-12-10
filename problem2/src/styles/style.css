@@ -201,4 +201,32 @@ form {
   h1 {
     font-size: 3em;
   }
+
+  #app {
+  padding: 1rem;
+}
+}
+
+
+@media screen and (max-width: 540px) {
+  form {
+    width: 100%;
+    max-width: 100%;
+    padding: 1em;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  #app {
+  padding: 1rem;
+}
+}
+
+
+@media screen and (max-width: 360px) {
+ .item-swap{
+  flex-direction: column;
+ }
 }
